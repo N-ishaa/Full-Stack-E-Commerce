@@ -8,6 +8,9 @@ import { toast } from 'react-toastify';
 import Context from '../context';
 
 const Login = () => {
+
+    console.log('Backend URL:', process.env.REACT_APP_BACKEND_URL)
+console.log('Environment:', process.env.NODE_ENV)
     const [showPassword,setShowPassword] = useState(false)
     const [data,setData] = useState({
         email : "",

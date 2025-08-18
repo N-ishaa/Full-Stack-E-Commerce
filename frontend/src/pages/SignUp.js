@@ -74,6 +74,8 @@ console.log(data)
       }
 
   }
+console.log('Backend URL:', process.env.REACT_APP_BACKEND_URL)
+console.log('Environment:', process.env.NODE_ENV)
 
   return (
     <section id='signup'>
