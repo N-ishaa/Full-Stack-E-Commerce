@@ -168,7 +168,7 @@ const UploadProduct = ({
                             {
                               data.productImage.map((el,index)=>{
                                 return(
-                                  <div className='relative group' key={index}>
+                                  <div className='relative group' >
                                       <img 
                                         src={el} 
                                         alt={el} 
