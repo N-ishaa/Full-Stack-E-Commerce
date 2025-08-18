@@ -13,10 +13,21 @@ const corsOptions = {
     ],
     credentials: true, // Important for cookies/auth
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-    allowedHeaders: ['Content-Type', 'Authorization']
+    allowedHeaders: ['Origin',
+        'X-Requested-With',
+        'Content-Type',
+        'Accept',
+        'Authorization',
+        'Cache-Control']
 }
 
 app.use(cors(corsOptions))
+app.use(cors({
+    origin: true, // Allows any origin
+    credentials: true
+}))
+// Handle preflight requests explicitly
+app.options('*', cors(corsOptions))
 app.use(express.json())
 app.use(cookieParser())
 
