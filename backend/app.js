@@ -8,7 +8,7 @@ const app = express()
 const corsOptions = {
     origin: [
         process.env.CORS_ORIGIN || "http://localhost:3000",
-       "https://full-stack-e-commerce-jade.vercel.app/", // Your Vercel URL" // If you have a custom domain
+       "https://full-stack-e-commerce-jade.vercel.app", // Your Vercel URL" // If you have a custom domain
     ],
     credentials: true, // Important for cookies/auth
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
