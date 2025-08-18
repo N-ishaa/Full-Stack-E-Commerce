@@ -35,7 +35,8 @@ async function userSignInController(req,res){
 
         const tokenOption = {
             httpOnly : true,
-            secure : true
+            secure : true,
+            sameSite : "none", // Important for cross-origin cookies
         }
 
         res.cookie("token",token,tokenOption).status(200).json({
