@@ -4,7 +4,7 @@
 const getBackendUrl = () => {
     // Check if we're in production
     if (process.env.NODE_ENV === 'production') {
-        return process.env.REACT_APP_BACKEND_URL || 'https://your-backend-app.onrender.com'
+        return process.env.REACT_APP_BACKEND_URL || "https://full-stack-e-commerce-bdz3.onrender.com"
     }
     
     // Development environment
