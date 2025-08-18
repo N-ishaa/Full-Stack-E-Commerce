@@ -1,5 +1,8 @@
-const uploadProductPermission = require('../../helpers/permission')
-const productModel = require('../../models/productModel')
+// const uploadProductPermission = require('../../helpers/permission')
+// const productModel = require('../../models/productModel')
+
+import uploadProductPermission from '../../helpers/permission.js'
+import productModel from '../../models/productModel.js'
 
 async function updateProductController(req,res){
     try{
@@ -29,4 +32,4 @@ async function updateProductController(req,res){
 }
 
 
-module.exports = updateProductController
+export default updateProductController

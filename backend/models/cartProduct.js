@@ -1,6 +1,7 @@
-const mongoose = require('mongoose')
+// const mongoose = require('mongoose')
+import mongoose from 'mongoose';
 
-const addToCart = mongoose.Schema({
+const addToCart = new mongoose.Schema({
    productId : {
         ref : 'product',
         type : String,
@@ -14,4 +15,4 @@ const addToCart = mongoose.Schema({
 
 const addToCartModel = mongoose.model("addToCart",addToCart)
 
-module.exports = addToCartModel
+export default addToCartModel;

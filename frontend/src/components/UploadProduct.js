@@ -8,6 +8,12 @@ import { MdDelete } from "react-icons/md";
 import SummaryApi from '../common';
 import {toast} from 'react-toastify'
 
+// cloudinary.config({
+//     cloud_name: process.env.REACT_APP_CLOUD_NAME_CLOUDINARY,
+//     api_key: process.env.CLOUDINARY_API_KEY,
+//     api_secret: process.env.CLOUDINARY_API_SECRET,
+// });
+
 const UploadProduct = ({
     onClose,
     fetchData
@@ -21,6 +27,7 @@ const UploadProduct = ({
     price : "",
     sellingPrice : ""
   })
+
   const [openFullScreenImage,setOpenFullScreenImage] = useState(false)
   const [fullScreenImage,setFullScreenImage] = useState("")
 
@@ -38,7 +45,9 @@ const UploadProduct = ({
 
   const handleUploadProduct = async(e) => {
     const file = e.target.files[0]
+ 
     const uploadImageCloudinary = await uploadImage(file)
+    console.log("upload Image",uploadImageCloudinary.url)
 
     setData((preve)=>{
       return{

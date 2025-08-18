@@ -7,12 +7,10 @@ const uploadImage  = async(image) => {
     
 
     const dataResponse = await fetch(url,{
-        method : "post",
+        method : "POST",
         body : formData
     })
-
     return dataResponse.json()
-
 }
 
 export default uploadImage 

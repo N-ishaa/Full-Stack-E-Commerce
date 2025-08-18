@@ -1,4 +1,6 @@
-const userModel = require("../models/userModel")
+// const userModel = require("../models/userModel") 
+import userModel from '../models/userModel.js'
+
 
 const uploadProductPermission = async(userId) => {
     const user = await userModel.findById(userId)
@@ -11,4 +13,4 @@ const uploadProductPermission = async(userId) => {
 }
 
 
-module.exports = uploadProductPermission
+export default uploadProductPermission

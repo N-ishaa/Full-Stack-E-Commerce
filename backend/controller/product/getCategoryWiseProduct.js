@@ -1,4 +1,5 @@
-const productModel = require("../../models/productModel")
+// const productModel = require("../../models/productModel")
+import productModel from '../../models/productModel.js'
 
 const getCategoryWiseProduct = async(req,res)=>{
     try{
@@ -20,4 +21,4 @@ const getCategoryWiseProduct = async(req,res)=>{
     }
 }
 
-module.exports = getCategoryWiseProduct
+export default getCategoryWiseProduct

@@ -49,9 +49,9 @@ const SignUp = () => {
       e.preventDefault()
 
       if(data.password === data.confirmPassword){
-
-        const dataResponse = await fetch(SummaryApi.signUP.url,{
-            method : SummaryApi.signUP.method,
+console.log(data)
+        const dataResponse = await fetch("http://localhost:8080/api/signup",{
+            method :"POST",
             headers : {
                 "content-type" : "application/json"
             },

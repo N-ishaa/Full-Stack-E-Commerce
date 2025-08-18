@@ -1,4 +1,5 @@
-const userModel = require("../../models/userModel")
+// const userModel = require("../../models/userModel")
+import userModel from '../../models/userModel.js'
 
 async function updateUser(req,res){
     try{
@@ -37,4 +38,4 @@ async function updateUser(req,res){
 }
 
 
-module.exports = updateUser
+export default updateUser

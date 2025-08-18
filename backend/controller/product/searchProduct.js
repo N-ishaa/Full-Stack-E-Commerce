@@ -1,4 +1,5 @@
-const productModel = require("../../models/productModel")
+// const productModel = require("../../models/productModel")
+    
 
 const searchProduct = async(req,res)=>{
     try{
@@ -33,4 +34,4 @@ const searchProduct = async(req,res)=>{
     }
 }
 
-module.exports = searchProduct
+export default searchProduct

@@ -1,5 +1,7 @@
-const userModel = require("../../models/userModel")
-const bcrypt = require('bcryptjs');
+// const userModel = require("../../models/userModel")
+// const bcrypt = require('bcryptjs');
+import userModel from '../../models/userModel.js';
+import bcrypt from 'bcryptjs';
 
 
 async function userSignUpController(req,res){
@@ -57,4 +59,4 @@ async function userSignUpController(req,res){
     }
 }
 
-module.exports = userSignUpController
+export default userSignUpController;

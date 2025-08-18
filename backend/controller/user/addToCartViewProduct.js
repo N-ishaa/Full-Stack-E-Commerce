@@ -1,4 +1,5 @@
-const addToCartModel = require("../../models/cartProduct")
+// const addToCartModel = require("../../models/cartProduct")
+import addToCartModel from '../../models/cartProduct.js'
 
 const addToCartViewProduct = async(req,res)=>{
     try{
@@ -23,4 +24,4 @@ const addToCartViewProduct = async(req,res)=>{
     }
 }
 
-module.exports =  addToCartViewProduct
+export default addToCartViewProduct
