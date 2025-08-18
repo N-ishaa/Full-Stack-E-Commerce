@@ -92,5 +92,12 @@ const SummaryApi = {
     }
 }
 
+console.log('Environment Variables:')
+console.log('NODE_ENV:', process.env.NODE_ENV)
+console.log('REACT_APP_BACKEND_URL:', process.env.REACT_APP_BACKEND_URL)
+console.log('SummaryApi.signIn.url:', SummaryApi.signIn.url)
+
+
+
 
 export default SummaryApi
