@@ -45,7 +45,7 @@ import filterProductController from '../controller/product/filterProduct.js';
 
 
 router.post("/signup",userSignUpController)
-router.post("/signin",userSignInController)
+router.post("/signin",authToken, userSignInController)
 router.get("/user-details",authToken,userDetailsController)
 router.get("/userLogout",userLogout)
 
