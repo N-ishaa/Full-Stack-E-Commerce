@@ -8,8 +8,7 @@ const app = express()
 const corsOptions = {
     origin: [
         process.env.CORS_ORIGIN || "http://localhost:3000",
-       "https://full-stack-e-commerce-jade.vercel.app/", // Your Vercel URL
-        "https://your-custom-domain.com" // If you have a custom domain
+       "https://full-stack-e-commerce-jade.vercel.app/", // Your Vercel URL" // If you have a custom domain
     ],
     credentials: true, // Important for cookies/auth
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
@@ -21,15 +20,22 @@ const corsOptions = {
         'Cache-Control']
 }
 
+// Apply CORS middleware BEFORE routes
 app.use(cors(corsOptions))
-app.use(cors({
-    origin: true, // Allows any origin
-    credentials: true
-}))
-// Handle preflight requests explicitly
+
+// Handle preflight OPTIONS requests explicitly
 app.options('*', cors(corsOptions))
+
+// Add logging to debug CORS
+app.use((req, res, next) => {
+    console.log(`${req.method} ${req.path} - Origin: ${req.headers.origin}`)
+    next()
+})
+// Handle preflight requests explicitly
 app.use(express.json())
 app.use(cookieParser())
+app.use(express.urlencoded({ extended: true }))
+
 
 app.use("/api",router)
 export {app} ;
