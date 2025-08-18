@@ -1,4 +1,17 @@
-const backendDomin = process.env.REACT_APP_BACKEND_URL || 'http://localhost:8080';
+// const backendDomin = process.env.REACT_APP_BACKEND_URL || 'http://localhost:8080';
+
+// config/api.js - Centralized API configuration
+const getBackendUrl = () => {
+    // Check if we're in production
+    if (process.env.NODE_ENV === 'production') {
+        return process.env.REACT_APP_BACKEND_URL || 'https://your-backend-app.onrender.com'
+    }
+    
+    // Development environment
+    return process.env.REACT_APP_BACKEND_URL || 'http://localhost:8080'
+}
+
+export const backendDomin = getBackendUrl()
 
 const SummaryApi = {
     signUP : {
