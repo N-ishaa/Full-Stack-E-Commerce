@@ -47,12 +47,12 @@ const UploadProduct = ({
     const file = e.target.files[0]
  
     const uploadImageCloudinary = await uploadImage(file)
-    console.log("upload Image",uploadImageCloudinary.url)
+    console.log("upload Image",uploadImageCloudinary.secure_url)
 
     setData((preve)=>{
       return{
         ...preve,
-        productImage : [ ...preve.productImage, uploadImageCloudinary.url]
+        productImage : [ ...preve.productImage, uploadImageCloudinary.secure_url]
       }
     })
   }
@@ -168,7 +168,7 @@ const UploadProduct = ({
                             {
                               data.productImage.map((el,index)=>{
                                 return(
-                                  <div className='relative group'>
+                                  <div className='relative group' key={index}>
                                       <img 
                                         src={el} 
                                         alt={el} 
